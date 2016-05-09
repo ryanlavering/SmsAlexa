@@ -1,12 +1,15 @@
 /**
  *	Author: Dr. Mihai GALOS
  *	Timestamp: 19:04:58, November 29th, 2015	
+ * 
+ * Modified 5/8/16 Ryan Lavering
+ * Modified 5/9/16 Ryan Lavering
  */
 
 // Twilio Credentials 
-var accountSid = 'xxxxxxf466a0d38d1050cc33a63c8f8696';
-var authToken = 'xxxxxxe592e2934ce653ecf5ea6525af';
-var fromNumber = '	0177777777';
+var accountSid = 'xxxxx';
+var authToken = 'xxxxx';
+var fromNumber = '18059999999';
 
 var https = require('https');
 var queryString = require('querystring');
@@ -197,12 +200,15 @@ function onIntent(intentRequest, session, callback) {
         var text = intentRequest.intent.slots.Text.value;
         console.log("Sending sms to : "+ destination+" with text: "+text);
         
+        /* Address book */
+        /* Todo: Use a dictionary for address combos */
+        /* Todo: Add multiple recipients logic */
         var number;
         if("wife" === destination){
-            number = "0176543210"
-        } else if ("husband" === destination){
-            number = "0170123456";
-        }
+            number = "18059999999";
+        } /*else if ("" === destination){
+            number = "1805";
+        } */
         SendSMS(number ,text,callback);
     } else {
         throw "Invalid intent";
