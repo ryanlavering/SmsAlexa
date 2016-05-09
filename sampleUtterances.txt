@@ -1,2 +1,9 @@
 SendSms send my {Destination} {Text}
+SendSms send the {Destination} {Text}
 SendSms send {Destination} {Text}
+SendSms text my {Destination} {Text}
+SendSms text the {Destination} {Text}
+SendSms text {Destination} {Text}
+SendSms tell my {Destination} {Text}
+SendSms tell the {Destination} {Text}
+SendSms tell {Destination} {Text}
